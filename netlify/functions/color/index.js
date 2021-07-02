@@ -11,7 +11,7 @@ async function handler(event) {
     inputDir: ".",
     functionsDir: "./netlify/functions/",
   });
-
+  console.log('Path:', event.path)
   try {
     return {
       statusCode: 200,
