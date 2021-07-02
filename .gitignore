@@ -1,0 +1,7 @@
+_site
+node_modules
+
+
+netlify/functions/color/*
+netlify/functions/color/**/*
+!netlify/functions/color/index.js

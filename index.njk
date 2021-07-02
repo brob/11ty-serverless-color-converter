@@ -1,0 +1,43 @@
+---
+title: "Simple Color Converter with 11ty Serverless"
+layout: "base.njk"
+permalink: 
+    build: "/"       
+---
+{% set pageTitle %}
+    {% if eleventy.serverless.path.title %}
+        {{ eleventy.serverless.query.query | safe }}
+    {% else %}
+        {{ title }}
+    {% endif %}
+{% endset %}
+<h1>{{ pageTitle }}</h1>
+
+<form id="colorForm">
+<label for="type">Color Space</label>
+<select id="type">
+    <option value="hex">Hex</option>
+    <option value="keyword">Keyword</option>
+</select>
+<label>Color String
+<input type="text">
+</label>
+<button>Convert</button>
+</form>
+
+
+<pre>{{ eleventy | dump(2) }}</pre>
+
+
+
+<script>
+document.getElementById('colorForm').addEventListener('submit', function(event) {
+    event.preventDefault()
+    console.log(event)
+    const type = event.target[0].value
+    const string = event.target[1].value
+    console.log(type, string)
+    window.location.href =`/color/${type}/${string}/` 
+})
+
+</script>

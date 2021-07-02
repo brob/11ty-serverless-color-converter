@@ -1,0 +1,6 @@
+[[redirects]]
+from = "/color/:type/:color/"
+to = "/.netlify/functions/color"
+status = 200
+force = true
+_generated_by_eleventy_serverless = "color"
