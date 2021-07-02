@@ -14,7 +14,7 @@ module.exports = function(eleventyConfig) {
 
       const conversions = colorSpaces.map(space => {
         const doWrite = type != space
-        const conversion = doWrite ? convert[type][space](color) : ''
+        const conversion = doWrite ? convert[type][space](color.toLowerCase()) : ''
         return doWrite ? `<li>
         ${space}: <code>${conversion}</code>
         </li>
