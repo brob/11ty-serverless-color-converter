@@ -5,7 +5,7 @@ permalink:
 ---
 {% set color = eleventy.serverless.path.color %}
 {% set type = eleventy.serverless.path.type %}
-<h1>Color stuff for {{ type }} {{ color }}</h1>
-{{ eleventy.serverless | dump(2)}}
+<h1>Color Conversions for {{ type }} {{ color }}</h1>
+<pre>{{ eleventy.serverless | dump(2)}}</pre>
 <h2>Conversions</h2>
 {{ color | convert(type) | safe }}
