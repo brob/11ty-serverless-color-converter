@@ -3,6 +3,7 @@ layout: "base.njk"
 permalink: 
     color: "/color/:type/:color/"
 ---
+<a href="/">&laquo; Head on home</a>
 {% set color = eleventy.serverless.path.color %}
 {% set type = eleventy.serverless.path.type %}
 <h1>Color Conversions for {{ type }} {{ color }}</h1>
