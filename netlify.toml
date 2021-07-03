@@ -4,3 +4,11 @@ to = "/.netlify/functions/color"
 status = 200
 force = true
 _generated_by_eleventy_serverless = "color"
+
+[[redirects]]
+from = "/post/"
+to = "/color/:type/:color/"
+status = 301
+  [redirects.query]
+  color = ":color"
+  type = ":type"

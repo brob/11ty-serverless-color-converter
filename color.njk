@@ -3,10 +3,14 @@ layout: "base.njk"
 permalink: 
     color: "/color/:type/:color/"
 ---
-<a href="/">&laquo; Head on home</a>
 {% set color = eleventy.serverless.path.color %}
 {% set type = eleventy.serverless.path.type %}
-<h1>Color Conversions for {{ type }} {{ color }}</h1>
+{% set colorString %}
+{{ "#" if type == 'hex' }}{{color}}
+{% endset %}
+<a href="/">&laquo; Head on home</a>
+
+<h1>Color Conversions for {{ type }} {{ color }} <span style="background-color:{{colorString}}; width: 1em;height:1em;display:inline-block;"></span></h1>
 <pre>{{ eleventy.serverless | dump(2)}}</pre>
 <h2>Conversions</h2>
 {{ color | convert(type) | safe }}

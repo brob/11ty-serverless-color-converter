@@ -13,16 +13,16 @@ permalink:
 {% endset %}
 <h1>{{ pageTitle }}</h1>
 
-<form id="colorForm">
+<form action="/post/" id="colorForm">
 <label for="type">Color Space</label>
-<select id="type">
+<select name="type" id="type">
     <option value="hex">Hex</option>
     <option value="keyword">Keyword</option>
 </select>
 <label>Color String
-<input type="text">
+<input name="color" type="text">
 </label>
-<button>Convert</button>
+<button type="submit">Convert</button>
 </form>
 
 
@@ -31,7 +31,7 @@ permalink:
 
 
 <script>
-document.getElementById('colorForm').addEventListener('submit', function(event) {
+/*document.getElementById('colorForm').addEventListener('submit', function(event) {
     event.preventDefault()
     console.log(event)
     const type = event.target[0].value
@@ -39,5 +39,5 @@ document.getElementById('colorForm').addEventListener('submit', function(event) 
     console.log(type, string)
     window.location.href =`/color/${type}/${string}/` 
 })
-
+*/
 </script>
